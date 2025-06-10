@@ -8,38 +8,39 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #000000; /* Fundo transparente */
     background-image: url("https://www.transparenttextures.com/patterns/stardust.png"); /* Textura sutil */
-    color: #333; /* Cor de texto padrão mais escura para contraste */
+    color: #333; 
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
-    padding: 20px; /* Espaçamento nas bordas da tela */
+    min-height: 100vh; 
+    padding: 10px; 
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 /* === Container Principal === */
 .container {
-    background-color: rgba(0, 0, 0, 0); /* fundo transparente */
+    background-color: rgba(0, 0, 0, 0); 
     padding: 30px 40px;
+    margin-left: -10rem;
     border-radius: 15px;
     width: 100%;
     max-width: 380px;
-    overflow: hidden;
-    color: #e0e0e0; /* texto claro */
-    margin-right: 15rem;
+    color: #e0e0e0;
     box-shadow: 
-        0 0 10px rgba(0, 191, 255, 0.116), /* Sombra mais próxima, azul claro */
-        0 0 20px rgba(0, 191, 255, 0), /* Sombra um pouco mais espalhada */
-        0 0 30px rgba(0, 191, 255, 0.075); /* Sombra mais difusa */
+        0 0 10px rgba(0, 191, 255, 0.116), 
+        0 0 20px rgba(0, 191, 255, 0), 
+        0 0 30px rgba(0, 191, 255, 0.075); 
 }
 
 /* Sol terra e lua */
 .container1 {
     height: 400px;
     width: 400px;
-    position: relative;
-    margin-right: 20rem; /* reduzido para evitar quebra de layout */
+    position: relative; 
     font-size: 6px;
     margin-right: 30rem;
+    margin-left:  -15rem;
 }
 
 /* Sol */
@@ -60,7 +61,7 @@ body {
 .sun img {
     height: 130%;
     width: 130%;
-    animation: sun-spin 150s linear infinite; /* Animação de rotação do sol*/
+    animation: sun-spin 150s linear infinite; 
 }
 
 /* Terra e Lua */
@@ -81,13 +82,13 @@ body {
     content: '';
     position: absolute;
     border-radius: 50%;
-    top: 35px; /* Ajuste para centralizar a Terra no seu próprio "órbita"*/
+    top: 35px; 
     right: 50px;
     width: 50px;
     height: 50px;
     background-image: url('./images/earth.png');
     background-size: cover;
-    transform: translate(25px, -25px); /* Ajuste manual para posicionamento*/
+    transform: translate(25px, -25px); 
 }
 
 .moon {
@@ -96,8 +97,8 @@ body {
     border-color: white transparent transparent transparent;
     border-width: 0.1em 0.1em 0 0;
     border-radius: 50%;
-    top: -5px; /* Posição da lua em relação à Terra*/
-    right: 10px; /* Posição da lua em relação à Terra*/
+    top: -5px; 
+    right: 10px; 
     width: 80px;
     height: 80px;
     animation: orbit 8.7s linear infinite;
@@ -107,39 +108,38 @@ body {
     content: '';
     position: absolute;
     border-radius: 50%;
-    top: 17px; /* Ajuste para centralizar a Lua no seu próprio "órbita"*/
+    top: 17px; 
     right: 7px;
     width: 12px;
     height: 12px;
     background-image: url('./images/moon.png');
     background-size: cover;
-    transform: translate(6px, -6px); /* Ajuste manual para posicionamento*/
+    transform: translate(6px, -6px); 
 }
 
 
 /* === Estilo das Seções de Formulário === */
 .form-section {
     width: 100%;
-    /* A transição pode ser usada depois com JS para animar a troca */
-    /* transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; */
+    padding-bottom: 10px;
 }
+
 
 .form-section h2 {
     text-align: center;
-    margin-bottom: 25px;
-    color: #d0d4d3; /* Cor do título */
+    color: #d0d4d3;
     font-weight: 600;
 }
 
 /* === Grupos de Formulário (Label + Input) === */
 .form-group {
-    margin-bottom: 20px; /* Espaçamento entre os campos */
+    margin-bottom: 1px; 
     position: relative;
 }
 
 .form-group label {
-    display: block; /* Coloca o label em sua própria linha */
-    margin-bottom: 8px;
+    display: block; 
+    margin-bottom: 3px;
     font-weight: 500;
     color: #d0d4d3;
     font-size: 0.9rem;
@@ -147,12 +147,12 @@ body {
 
 .form-group input {
     width: 100%;
-    padding: 12px 15px;
-    border: 1px solid #444; /* borda mais visível no tema escuro */
+    padding: 8px 15px;
+    border: 1px solid #444; 
     border-radius: 8px;
     font-size: 1rem;
-    background-color: #1a1a1a; /* fundo mais escuro */
-    color: #ffffff; /* texto branco */
+    background-color: #1a1a1a; 
+    color: #ffffff; 
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -184,22 +184,21 @@ body {
 }
 
 .btn:hover {
-    background-color: #135388; /* escurece no hover */
-    /* Brilho mais notável no hover para preparar para o clique */
+    background-color: #135388; 
     box-shadow:
-        0 0 5px rgba(100, 149, 237, 0.8), /* Azul claro forte */
-        0 0 10px rgba(36, 98, 231, 0.6);   /* Azul um pouco mais intenso, mais espalhado */
+        0 0 5px rgba(100, 149, 237, 0.8), 
+        0 0 10px rgba(36, 98, 231, 0.6);   
 }
 
 .btn:active {
-    transform: scale(0.94); /* Diminui um pouco mais para um clique mais forte */
-    background-color: #164d85; /* Cor ainda mais vibrante no clique */
-    /* Efeito de "explosão" de brilho estilo universo no clique */
+    transform: scale(0.94); 
+    background-color: #164d85; 
+    
     box-shadow:
-        0 0 20px rgba(100, 149, 237, 1),   /* Brilho central azul muito forte */
-        0 0 40px rgba(20, 62, 177, 0.8),  /* Brilho roxo expandido (nebulosa) */
-        0 0 60px rgba(255, 255, 255, 0.062); /* Leve brilho branco/estrelas expandindo */
-    transition: background-color 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease; /* Transição mais rápida no active para o efeito de "pop" */
+        0 0 20px rgba(100, 149, 237, 1),   
+        0 0 40px rgba(20, 62, 177, 0.8),  
+        0 0 60px rgba(255, 255, 255, 0.062); 
+    transition: background-color 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease; 
 }
 
 /* === Links para Trocar Formulário === */
@@ -227,13 +226,13 @@ body {
 /* Container principal do campo select */
 .choices {
     width: 100%;
-    border: 1px solid #444; /* borda escura como os inputs */
+    border: 1px solid #444; 
     border-radius: 8px;
-    background-color: #1a1a1a; /* fundo escuro */
+    background-color: #1a1a1a; 
     font-size: 1rem;
     margin: 0;
     padding: 0;
-    color: #fff; /* texto branco */
+    color: #fff; 
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -241,7 +240,7 @@ body {
 .choices__inner {
     padding: 12px 15px;
     border: none;
-    background: transparent; /* herda fundo escuro */
+    background: transparent; 
     border-radius: 8px;
     min-height: auto;
     color: #fff;
@@ -263,7 +262,7 @@ body {
 .choices__list--dropdown {
     border: 1px solid #444;
     border-radius: 8px;
-    background-color: #1a1a1a; /* fundo escuro para o dropdown */
+    background-color: #1a1a1a; 
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     z-index: 10;
 }
@@ -272,50 +271,50 @@ body {
 .choices__list--dropdown .choices__item {
     padding: 10px 15px;
     font-size: 0.95rem;
-    color: #ffffff; /* Texto branco */
-    background-color: #1a1a1a; /* Fundo escuro */
+    color: #ffffff; 
+    background-color: #1a1a1a; 
 }
 
 /* Hover e destaque na lista (Melhor contraste para o item selecionado/hover) */
 .choices__list--dropdown .choices__item--selectable.is-highlighted {
-    background-color: #728d8c; /* Cor de destaque mais forte (verde-azulado escuro) */
-    color: #1a1a1a; /* Texto escuro para contraste no item destacado */
+    background-color: #728d8c; 
+    color: #1a1a1a; 
 }
 
 /* Estilo para o item placeholder "Selecione seu estado" dentro da lista do dropdown (quando aberta) */
 .choices__list--dropdown .choices__item.choices__placeholder {
-    background-color: #1a1a1a; /* Fundo escuro para o placeholder na lista aberta */
-    color: #999; /* Cor do texto do placeholder na lista aberta */
+    background-color: #1a1a1a; 
+    color: #999; 
 }
 
 /* Estilo para o placeholder no campo principal (quando dropdown fechado e nenhum item selecionado) */
 .choices__item.choices__placeholder {
-    color: #777;  /* Cor do placeholder no campo selecionado */
-    opacity: 1; /* Garante que o placeholder seja visível */
+    color: #777; 
+    opacity: 1; 
 }
 
 /* Ajuste para o texto dentro do campo de select quando algo foi selecionado */
 .choices__list--single .choices__item {
-    color: #ffffff; /* Garante que o item selecionado no campo principal seja branco */
+    color: #ffffff; 
 }
 
 /* Custom scrollbar para o dropdown (para navegadores Webkit como Chrome) */
 .choices__list--dropdown::-webkit-scrollbar {
-    width: 8px; /* Largura da barra de rolagem */
+    width: 8px; 
 }
 
 .choices__list--dropdown::-webkit-scrollbar-track {
-    background: #2c2c2c; /* Cor do "trilho" da barra de rolagem */
+    background: #2c2c2c; 
     border-radius: 10px;
 }
 
 .choices__list--dropdown::-webkit-scrollbar-thumb {
-    background: #8ba1a0; /* Cor do "polegar" da barra de rolagem */
+    background: #8ba1a0; 
     border-radius: 10px;
 }
 
 .choices__list--dropdown::-webkit-scrollbar-thumb:hover {
-    background: #728d8c; /* Cor do "polegar" ao passar o mouse */
+    background: #728d8c; 
 }
 
 
@@ -361,7 +360,7 @@ body {
 @media (max-width: 500px) {
     .container {
         padding: 20px 25px;
-        margin: 10px; /* Adiciona margem em telas muito pequenas */
+        margin: 10px; 
     }
 
     .form-section h2 {
@@ -410,7 +409,7 @@ body {
 
 @media (max-width: 768px) {
     .container1 {
-        display: none; /* esconde o sistema solar em telas pequenas */
+        display: none; 
     }
 
     .container {
