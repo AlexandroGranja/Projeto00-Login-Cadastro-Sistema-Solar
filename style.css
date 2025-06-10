@@ -1,0 +1,519 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #000000; /* Fundo transparente */
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png"); /* Textura sutil */
+    color: #333; /* Cor de texto padrão mais escura para contraste */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Garante que o body ocupe toda a altura da tela */
+    padding: 20px; /* Espaçamento nas bordas da tela */
+}
+
+/* === Container Principal === */
+.container {
+    background-color: rgba(0, 0, 0, 0); /* fundo transparente */
+    padding: 30px 40px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 380px;
+    overflow: hidden;
+    color: #e0e0e0; /* texto claro */
+    margin-right: 15rem;
+    box-shadow: 
+        0 0 10px rgba(0, 191, 255, 0.116), /* Sombra mais próxima, azul claro */
+        0 0 20px rgba(0, 191, 255, 0), /* Sombra um pouco mais espalhada */
+        0 0 30px rgba(0, 191, 255, 0.075); /* Sombra mais difusa */
+}
+
+/* Sol terra e lua */
+.container1 {
+    height: 400px;
+    width: 400px;
+    position: relative;
+    margin-right: 20rem; /* reduzido para evitar quebra de layout */
+    font-size: 6px;
+    margin-right: 30rem;
+}
+
+/* Sol */
+.sun {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 150px;
+    left: 150px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 0 3em rgb(255, 128, 0), 0 0 5em rgba(255, 165, 0, 0.7); /* Efeito de brilho*/
+    animation: sun-glow 3s infinite alternate; /* Animação de brilho*/
+}
+
+.sun img {
+    height: 130%;
+    width: 130%;
+    animation: sun-spin 150s linear infinite; /* Animação de rotação do sol*/
+}
+
+/* Terra e Lua */
+.earth {
+    position: absolute;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+    top: 50px;
+    left: 50px;
+    width: 300px;
+    height: 300px;
+    animation: orbit 56.5s linear infinite;
+}
+
+.earth::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    top: 35px; /* Ajuste para centralizar a Terra no seu próprio "órbita"*/
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    background-image: url('./images/earth.png');
+    background-size: cover;
+    transform: translate(25px, -25px); /* Ajuste manual para posicionamento*/
+}
+
+.moon {
+    position: absolute;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+    top: -5px; /* Posição da lua em relação à Terra*/
+    right: 10px; /* Posição da lua em relação à Terra*/
+    width: 80px;
+    height: 80px;
+    animation: orbit 8.7s linear infinite;
+}
+
+.moon::before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    top: 17px; /* Ajuste para centralizar a Lua no seu próprio "órbita"*/
+    right: 7px;
+    width: 12px;
+    height: 12px;
+    background-image: url('./images/moon.png');
+    background-size: cover;
+    transform: translate(6px, -6px); /* Ajuste manual para posicionamento*/
+}
+
+
+/* === Estilo das Seções de Formulário === */
+.form-section {
+    width: 100%;
+    /* A transição pode ser usada depois com JS para animar a troca */
+    /* transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; */
+}
+
+.form-section h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #d0d4d3; /* Cor do título */
+    font-weight: 600;
+}
+
+/* === Grupos de Formulário (Label + Input) === */
+.form-group {
+    margin-bottom: 20px; /* Espaçamento entre os campos */
+    position: relative;
+}
+
+.form-group label {
+    display: block; /* Coloca o label em sua própria linha */
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #d0d4d3;
+    font-size: 0.9rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #444; /* borda mais visível no tema escuro */
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #1a1a1a; /* fundo mais escuro */
+    color: #ffffff; /* texto branco */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #d0d4d3;
+    box-shadow: 0 0 0 3px rgba(139, 161, 160, 0.4);
+}
+
+.form-group input::placeholder {
+    color: #AAA;
+}
+
+
+/* === Botões === */
+.btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #073b66; /* verde-azulado suave */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #135388; /* escurece no hover */
+    /* Brilho mais notável no hover para preparar para o clique */
+    box-shadow:
+        0 0 5px rgba(100, 149, 237, 0.8), /* Azul claro forte */
+        0 0 10px rgba(36, 98, 231, 0.6);   /* Azul um pouco mais intenso, mais espalhado */
+}
+
+.btn:active {
+    transform: scale(0.94); /* Diminui um pouco mais para um clique mais forte */
+    background-color: #164d85; /* Cor ainda mais vibrante no clique */
+    /* Efeito de "explosão" de brilho estilo universo no clique */
+    box-shadow:
+        0 0 20px rgba(100, 149, 237, 1),   /* Brilho central azul muito forte */
+        0 0 40px rgba(20, 62, 177, 0.8),  /* Brilho roxo expandido (nebulosa) */
+        0 0 60px rgba(255, 255, 255, 0.062); /* Leve brilho branco/estrelas expandindo */
+    transition: background-color 0.1s ease, transform 0.1s ease, box-shadow 0.1s ease; /* Transição mais rápida no active para o efeito de "pop" */
+}
+
+/* === Links para Trocar Formulário === */
+.switch-form {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #d0d4d3;
+}
+
+.switch-form a {
+    color: #d0d4d3;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.switch-form a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* === Estilo personalizado para o select estilizado pelo Choices.js – TEMA ESCURO (Versão Final e Completa) === */
+
+/* Container principal do campo select */
+.choices {
+    width: 100%;
+    border: 1px solid #444; /* borda escura como os inputs */
+    border-radius: 8px;
+    background-color: #1a1a1a; /* fundo escuro */
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    color: #fff; /* texto branco */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Área onde o valor selecionado aparece (campo principal) */
+.choices__inner {
+    padding: 12px 15px;
+    border: none;
+    background: transparent; /* herda fundo escuro */
+    border-radius: 8px;
+    min-height: auto;
+    color: #fff;
+}
+
+/* Remove o espaçamento da lista quando só há um item */
+.choices__list--single {
+    padding: 0;
+}
+
+/* Destaque ao focar no campo principal (quando dropdown fechado) */
+.choices:focus-within {
+    border-color: #8ba1a0;
+    box-shadow: 0 0 0 3px rgba(139, 161, 160, 0.3);
+    outline: none;
+}
+
+/* Dropdown (caixa que aparece ao clicar) */
+.choices__list--dropdown {
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: #1a1a1a; /* fundo escuro para o dropdown */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+/* Cada item da lista no dropdown (estado normal) */
+.choices__list--dropdown .choices__item {
+    padding: 10px 15px;
+    font-size: 0.95rem;
+    color: #ffffff; /* Texto branco */
+    background-color: #1a1a1a; /* Fundo escuro */
+}
+
+/* Hover e destaque na lista (Melhor contraste para o item selecionado/hover) */
+.choices__list--dropdown .choices__item--selectable.is-highlighted {
+    background-color: #728d8c; /* Cor de destaque mais forte (verde-azulado escuro) */
+    color: #1a1a1a; /* Texto escuro para contraste no item destacado */
+}
+
+/* Estilo para o item placeholder "Selecione seu estado" dentro da lista do dropdown (quando aberta) */
+.choices__list--dropdown .choices__item.choices__placeholder {
+    background-color: #1a1a1a; /* Fundo escuro para o placeholder na lista aberta */
+    color: #999; /* Cor do texto do placeholder na lista aberta */
+}
+
+/* Estilo para o placeholder no campo principal (quando dropdown fechado e nenhum item selecionado) */
+.choices__item.choices__placeholder {
+    color: #777;  /* Cor do placeholder no campo selecionado */
+    opacity: 1; /* Garante que o placeholder seja visível */
+}
+
+/* Ajuste para o texto dentro do campo de select quando algo foi selecionado */
+.choices__list--single .choices__item {
+    color: #ffffff; /* Garante que o item selecionado no campo principal seja branco */
+}
+
+/* Custom scrollbar para o dropdown (para navegadores Webkit como Chrome) */
+.choices__list--dropdown::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+}
+
+.choices__list--dropdown::-webkit-scrollbar-track {
+    background: #2c2c2c; /* Cor do "trilho" da barra de rolagem */
+    border-radius: 10px;
+}
+
+.choices__list--dropdown::-webkit-scrollbar-thumb {
+    background: #8ba1a0; /* Cor do "polegar" da barra de rolagem */
+    border-radius: 10px;
+}
+
+.choices__list--dropdown::-webkit-scrollbar-thumb:hover {
+    background: #728d8c; /* Cor do "polegar" ao passar o mouse */
+}
+
+
+/* === Animação flip-scale-2-ver-left (Animista) === */
+@keyframes flip-scale-2-ver-left {
+  0% {
+    transform: translateX(0) rotateY(0) scale(1);
+    transform-origin: 0% 50%;
+  }
+  50% {
+    transform: translateX(-50%) rotateY(90deg) scale(2);
+    transform-origin: 50% 50%;
+  }
+  100% {
+    transform: translateX(-100%) rotateY(180deg) scale(1);
+    transform-origin: 100% 50%;
+  }
+}
+
+.flip-scale-2-ver-left {
+  animation: flip-scale-2-ver-left 0.7s linear both;
+}
+
+/* === Animação de entrada suave === */
+@keyframes fade-slide-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-slide-in-right {
+  animation: fade-slide-in-right 0.6s ease both;
+}
+
+
+
+/* === Responsividade Básica === */
+@media (max-width: 500px) {
+    .container {
+        padding: 20px 25px;
+        margin: 10px; /* Adiciona margem em telas muito pequenas */
+    }
+
+    .form-section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .form-group input {
+        padding: 10px 12px;
+    }
+
+    .btn {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    
+
+}
+
+@keyframes orbit {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animação para a rotação do sol */
+@keyframes sun-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Animação para o brilho do sol */
+@keyframes sun-glow {
+    0% {
+        box-shadow: 0 0 3em rgb(255, 128, 0), 0 0 5em rgba(255, 165, 0, 0.7);
+    }
+    50% {
+        box-shadow: 0 0 4em rgb(255, 140, 0), 0 0 6em rgba(255, 180, 0, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 3em rgb(255, 128, 0), 0 0 5em rgba(255, 165, 0, 0.7);
+    }
+}
+
+@media (max-width: 768px) {
+    .container1 {
+        display: none; /* esconde o sistema solar em telas pequenas */
+    }
+
+    .container {
+        margin: 0 auto;
+        padding: 25px 20px;
+    }
+}
+
+/* === Estrelas Personalizadas === */
+.custom-shooting-stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.custom-shooting-stars .star {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  opacity: 0;
+}
+
+/* 1. De cima para baixo indo para a direita */
+.custom-shooting-stars .left-to-right {
+  top: -10px;
+  left: 10%;
+  background: linear-gradient(45deg, white, transparent);
+  animation: leftToRightDown 6s linear infinite;
+}
+
+/* 2. Da direita para a esquerda descendo */
+.custom-shooting-stars .right-to-left {
+  top: -10px;
+  background: linear-gradient(-45deg, white, transparent);
+  animation: rightToLeftDown 6s linear infinite;
+}
+
+.custom-shooting-stars .right-to-left.delay1 {
+  left: 80%;
+  animation-delay: 2s;
+}
+
+.custom-shooting-stars .right-to-left.delay2 {
+  left: 60%;
+  animation-delay: 4s;
+}
+
+/* 3. Meteoro subindo da direita para a esquerda */
+.custom-shooting-stars .meteor {
+  bottom: -20px;
+  right: 0;
+  width: 4px;
+  height: 160px;
+  margin-right: rem;
+  background: linear-gradient(135deg, white, transparent);
+  animation: meteorUp 8s linear infinite;
+  animation-delay: 2s;
+}
+
+/* === Animações === */
+@keyframes leftToRightDown {
+  0% {
+    transform: translate(0, 0) rotate(-45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(300px, 600px) rotate(-45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rightToLeftDown {
+  0% {
+    transform: translate(0, 0) rotate(45deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-300px, 600px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes meteorUp {
+  0% {
+    transform: translate(0, 0) rotate(-45deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-400px, -800px) rotate(-45deg);
+    opacity: 0;
+  }
+}
