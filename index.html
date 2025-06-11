@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login & Cadastro</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+  <!-- Estrelas Personalizadas Adicionais -->
+  <div class="custom-shooting-stars">
+    <div class="star left-to-right"></div>
+    <div class="star right-to-left delay1"></div>
+    <div class="star right-to-left delay2"></div>
+    <div class="star meteor"></div>
+  </div>
+
+  <div class="container1">
+    <div class="sun">
+      <img src="./images/sun.png" alt="sun">
+    </div>
+    <div class="earth">
+      <div class="moon"></div>
+    </div>
+    
+  </div>
+
+
+  <div class="container">
+
+    <!-- Seção de Login -->
+    <section id="login-section" class="form-section">
+      <h2>Login</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="login-email">Email:</label>
+          <input type="email" id="login-email" name="login-email" placeholder="seuemail@exemplo.com" required>
+        </div>
+        <div class="form-group">
+          <label for="login-senha">Senha:</label>
+          <input type="password" id="login-senha" name="login-senha" placeholder="Sua senha" required>
+        </div>
+        <button type="submit" class="btn">Entrar</button>
+        <p class="switch-form">Não tem uma conta? <a href="#cadastro-section" id="show-cadastro">Cadastre-se</a></p>
+      </form>
+    </section>
+
+    <div class="satelite">
+     <img src="./images/Satelite.png" alt="satelite">
+    </div>
+
+    <!-- Seção de Cadastro -->
+    <section id="cadastro-section" class="form-section" style="display: none;"> <!-- Começa escondido -->
+      <h2>Cadastro</h2>
+      <form id="cadastro-form">
+        <div class="form-group">
+          <label for="cadastro-nome">Nome:</label>
+          <input type="text" id="cadastro-nome" name="cadastro-nome" placeholder="Seu nome completo" required>
+        </div>
+
+        <div class="form-group">
+          <label for="cadastro-email">Email:</label>
+          <input type="email" id="cadastro-email" name="cadastro-email" placeholder="seuemail@exemplo.com" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="cadastro-Nascimento">Nascimento:</label>
+          <input type="date" id="cadastro-Nascimento" name="cadastro-nascimento">
+        </div>
+
+
+
+        <div class="form-group custom-select-wrapper">
+          <label for="cadastro-localidade">Estado:</label>
+          <select id="cadastro-localidade" name="cadastro-localidade" required>
+            <option value="" disabled selected>Selecione seu estado</option>
+            <option value="AC">Acre (AC)</option>
+            <option value="AL">Alagoas (AL)</option>
+            <option value="AP">Amapá (AP)</option>
+            <option value="AM">Amazonas (AM)</option>
+            <option value="BA">Bahia (BA)</option>
+            <option value="CE">Ceará (CE)</option>
+            <option value="DF">Distrito Federal (DF)</option>
+            <option value="ES">Espírito Santo (ES)</option>
+            <option value="GO">Goiás (GO)</option>
+            <option value="MA">Maranhão (MA)</option>
+            <option value="MT">Mato Grosso (MT)</option>
+            <option value="MS">Mato Grosso do Sul (MS)</option>
+            <option value="MG">Minas Gerais (MG)</option>
+            <option value="PA">Pará (PA)</option>
+            <option value="PB">Paraíba (PB)</option>
+            <option value="PR">Paraná (PR)</option>
+            <option value="PE">Pernambuco (PE)</option>
+            <option value="PI">Piauí (PI)</option>
+            <option value="RJ">Rio de Janeiro (RJ)</option>
+            <option value="RN">Rio Grande do Norte (RN)</option>
+            <option value="RS">Rio Grande do Sul (RS)</option>
+            <option value="RO">Rondônia (RO)</option>
+            <option value="RR">Roraima (RR)</option>
+            <option value="SC">Santa Catarina (SC)</option>
+            <option value="SP">São Paulo (SP)</option>
+            <option value="SE">Sergipe (SE)</option>
+            <option value="TO">Tocantins (TO)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="cadastro-senha">Senha:</label>
+          <input type="password" id="cadastro-senha" name="cadastro-senha" placeholder="Crie uma senha" required>
+        </div>
+
+        <div class="form-group">
+          <label for="cadastro-confirma-senha">Confirmar Senha:</label>
+          <input type="password" id="cadastro-confirma-senha" name="cadastro-confirma-senha"
+            placeholder="Confirme sua senha" required>
+        </div>
+
+        <button type="submit" class="btn">Cadastrar</button>
+        <p class="switch-form">Já tem uma conta? <a href="#login-section" id="show-login">Faça Login</a></p>
+      </form>
+    </section>
+  </div>
+  
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="script.js"></script>
+     
+
+</body>
+
+</html>
+
