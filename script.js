@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Função que aplica a animação antes de trocar os formulários
 function animarTroca(formularioParaEsconder, formularioParaMostrar) {
     // Adiciona a classe de animação ao formulário que será escondido
-    formularioParaEsconder.classList.add('flip-scale-2-ver-left'); 
+    formularioParaEsconder.classList.add('flip-scale-2-ver-left');
 
     // Aguarda o fim da animação de saída (0.5s) para trocar a visibilidade
     setTimeout(() => {
