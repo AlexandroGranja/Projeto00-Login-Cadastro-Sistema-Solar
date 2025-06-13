@@ -1,0 +1,22 @@
+nohup: ignoring input
+ * Serving Flask app 'main'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://169.254.0.21:5001
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 107-238-436
+127.0.0.1 - - [13/Jun/2025 09:30:31] "GET /api/usuarios HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 09:30:37] "[35m[1mPOST /api/cadastro HTTP/1.1[0m" 201 -
+127.0.0.1 - - [13/Jun/2025 09:30:41] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 09:30:46] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 09:30:46] "GET /style.css HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 09:30:46] "GET /images/sun.png HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 09:30:46] "GET /images/Satelite.png HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 09:30:46] "GET /script.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 09:30:46] "GET /images/moon.png HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 09:30:46] "GET /images/earth.png HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2025 09:30:46] "GET /favicon.ico HTTP/1.1" 200 -
