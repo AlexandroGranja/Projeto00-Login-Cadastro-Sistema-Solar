@@ -1,4 +1,4 @@
-#Pagina De Login e Cadastro
+# Pagina De Login e Cadastro
 
 Este é uma Pagina De login e Cadastro Com Um Sistema De Backend Básico Em Python/Flask
 
