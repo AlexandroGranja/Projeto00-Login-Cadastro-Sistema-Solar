@@ -161,8 +161,8 @@ backend_login_cadastro/
 5. **Deploy em produção** - Heroku, Railway, etc.
 
 ## 📞 Suporte: 
-## Email: Alex.granjaaa@hotmail.com
-## Telefone:(21) 96958-5179
+Email: Alex.granjaaa@hotmail.com
+Telefone:(21) 96958-5179
 
 O backend está totalmente funcional e integrado com frontend. Todas as validações estão implementadas e o sistema está pronto para uso em desenvolvimento ou produção.
 
