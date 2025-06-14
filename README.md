@@ -1,6 +1,6 @@
-# Backend de Login e Cadastro
+#Pagina De Login e Cadastro
 
-Este é um backend básico em Python/Flask criado para sua página de login
+Este é uma Pagina De login e Cadastro Com Um Sistema De Backend Básico Em Python/Flask
 
 ## 🚀 Funcionalidades Implementadas
 
