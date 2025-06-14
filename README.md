@@ -15,8 +15,6 @@ Esta é uma Pagina De login e Cadastro Com Um Sistema De Backend Básico Em Pyth
 - **Tratamento de erros** robusto
 
 ### Frontend Integrado
-- **Design original preservado** - nenhuma alteração visual
-- **Animações mantidas** - todas as transições funcionam
 - **Integração com API** - formulários conectados ao backend
 - **Mensagens de feedback** - sucesso e erro exibidos ao usuário
 - **Validação client-side** - experiência de usuário aprimorada
@@ -162,7 +160,7 @@ backend_login_cadastro/
 4. **Dashboard** - Área logada para usuários
 5. **Deploy em produção** - Heroku, Railway, etc.
 
-## 📞 Suporte
+## 📞 Suporte: # Alex.granjaaa@hotmail.com
 
-O backend está totalmente funcional e integrado com seu frontend. Todas as validações estão implementadas e o sistema está pronto para uso em desenvolvimento ou produção.
+O backend está totalmente funcional e integrado com frontend. Todas as validações estão implementadas e o sistema está pronto para uso em desenvolvimento ou produção.
 
