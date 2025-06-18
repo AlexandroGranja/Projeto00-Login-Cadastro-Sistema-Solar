@@ -86,7 +86,7 @@ curl -X GET http://localhost:5001/api/usuarios
 ## 📁 Estrutura do Projeto
 
 ```
-backend_login_cadastro/
+login_cadastro/
 ├── src/
 │   ├── models/
 │   │   └── user.py          # Modelo de usuário com validações
